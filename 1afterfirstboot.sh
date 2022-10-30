@@ -20,6 +20,15 @@ subscription-manager repos  \
 
 sudo dnf update -y
 
+# set DNS
+echo 'nameserver 1.1.1.1' | sudo tee /etc/resolv.conf
+ 
+# disable selinux
+sudo setenforce 0
+
+# install Packstack Installer
+sudo dnf install -y openstack-packstack openstack-selinux
+
 # install networks-scripts & disabling firewall
 sudo dnf install network-scripts -y
 sudo systemctl disable firewalld
