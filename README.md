@@ -1,0 +1,2 @@
+# myopenstacksetup
+devstack for rhel
