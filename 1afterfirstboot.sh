@@ -31,9 +31,10 @@ sudo dnf install -y openstack-packstack openstack-selinux
 
 # install networks-scripts & disabling firewall
 sudo dnf install network-scripts -y
+sudo systemctl enable --now network
+sudo systemctl start network
 sudo systemctl disable firewalld
 sudo systemctl stop firewalld
 sudo systemctl disable NetworkManager
 sudo systemctl stop NetworkManager
-sudo systemctl enable network
-sudo systemctl start network
+
