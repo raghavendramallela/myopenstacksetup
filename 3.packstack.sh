@@ -1,12 +1,3 @@
-# set DNS
-echo 'nameserver 1.1.1.1' | sudo tee /etc/resolv.conf
- 
-# disable selinux
-sudo setenforce 0
-
-# install Packstack Installer
-sudo dnf install -y openstack-packstack openstack-selinux
-
 # get packstack answerfile (omit "--osron-ovs-bridge-interfaces=br-ex:eth0 " if error with Mitaka  https://bugzilla.redhat.com/show_bug.cgi?id=1316856 )
 sudo packstack --default-password=admin \
 --os-compute-hosts=$(hostname -i) \
